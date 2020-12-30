@@ -7,7 +7,7 @@ app.secret_key = 'development key'
 
 @app.route('/')
 def login():
-    return render_template('scratch.html')
+    return render_template('homepage.html')
 
 
 @app.route('/viewerform')
@@ -25,7 +25,10 @@ def viewer():
     if date_opened == '':
         date_opened = None
     date_fulfilled = request.form['date_fulfilled']
-    if date_fulfilled == '':
+    order_status = request.form ['order_status']
+    if date_fulfilled == '' and order_status == 'open':
+        date_fulfilled = 'IS NULL'
+    elif date_fulfilled == '':
         date_fulfilled = None
     frequent_item = request.form['frequent_item']
     if frequent_item == 'no_filter':
@@ -44,8 +47,11 @@ def viewer():
         counter = counter + 1
     if date_fulfilled is None:
         date_fulfilled_filter = ''
+    elif date_fulfilled == 'IS NULL':
+        date_fulfilled_filter = 'date_fulfilled ' + date_fulfilled + ' AND '
+        counter = counter + 1
     else:
-        date_fulfilled_filter = 'date fulfilled = ' + date_fulfilled + ' AND '
+        date_fulfilled_filter = 'date_fulfilled = ' + date_fulfilled + ' AND '
         counter = counter + 1
     if frequent_item is None:
         frequent_item_filter = ''
