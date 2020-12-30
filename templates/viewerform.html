@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Search Options</h1>
+    <form action = "http://localhost:5000/viewerresults" method = "POST">
+        <label for="user">User:</label>
+        <select name="user" id = "user">
+            <option value ="no_filter">&ltNo filter&gt</option>
+            <option value ="Hazem">Hazem</option>
+            <option value ="Omar">Omar</option>
+            <option value ="Yussef">Yussef</option>
+            <option value ="Dada">Dada</option>
+            <option value ="Mama">Mama</option>
+        </select>
+        <br><br>
+        <label for="date_opened",>Date Opened:</label>
+        <input type="date" id="date_opened" name="date_opened">
+        <br><br>
+        <label for="date_fulfilled",>Date Fulfilled:</label>
+        <input type="date" id="date_fulfilled" name="date_fulfilled">
+        <br><br>
+        <label for="frequent_item",>Item:</label>
+        <select name="frequent_item" id = "frequent_item">
+            <option value ="no_filter">&ltNo filter&gt</option>
+            <option value ="Bread">Bread</option>
+            <option value ="Fruit">Fruit</option>
+            <option value ="Soda">Soda</option>
+            <option value ="Meat">Meat</option>
+            <option value ="Other">Other</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+        <br><br>
+<a href = "/">Go back to home page</a>
+</body>
+</html>
