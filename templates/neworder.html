@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Create a New Order</h1>
+     <form action = "http://localhost:5000/neworder" method = "POST">
+        <label for="user">User:</label>
+        <select name="user" id = "user">
+            <option value ="Hazem">Hazem</option>
+            <option value ="Omar">Omar</option>
+            <option value ="Yussef">Yussef</option>
+            <option value ="Dada">Dada</option>
+            <option value ="Mama">Mama</option>
+        <br>
+        </select>
+          <select name="frequent_item" id = "frequent_item">
+            <option value ="Bread">Bread</option>
+            <option value ="Fruit">Fruit</option>
+            <option value ="Soda">Soda</option>
+            <option value ="Meat">Meat</option>
+            <option value ="Other">Other</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
